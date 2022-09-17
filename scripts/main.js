@@ -78,7 +78,7 @@ function go() {
         e.preventDefault();
         console.log('clicked');
         console.log('orientation:', window.screen.orientation);
-        if (typeof( window.screen ) !== "undefined") {
+        if (typeof( window.screen.orientation ) !== "undefined") {
             document.getElementById('debug').innerHTML = window.screen.orientation.type + ' ' + window.screen.orientation.angle;
         } else {
             document.getElementById('debug').innerHTML = window.orientation;
