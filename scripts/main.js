@@ -71,12 +71,14 @@ function go() {
         let a = event.accelerationIncludingGravity;
         ax = -a.x;
         ay = a.y;
-        console.log(event);
+        // console.log(event);
     }
 
     document.getElementById('btn-start').addEventListener('click', function(e) {
         e.preventDefault();
         console.log('clicked');
+        console.log('orientation:', window.screen.orientation);
+        document.getElementById('debug').innerHTML = window.screen.orientation.type + ' ' + window.screen.orientation.angle;
 
         document.getElementById('menu-wrapper').style.display = 'none';
 
