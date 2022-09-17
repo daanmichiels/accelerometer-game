@@ -78,7 +78,11 @@ function go() {
         e.preventDefault();
         console.log('clicked');
         console.log('orientation:', window.screen.orientation);
-        document.getElementById('debug').innerHTML = window.screen.orientation.type + ' ' + window.screen.orientation.angle;
+        if (typeof window.screen !== "undefined") {
+            document.getElementById('debug').innerHTML = window.screen.orientation.type + ' ' + window.screen.orientation.angle;
+        }{
+            document.getElementById('debug').innerHTML = window.orientation;
+        }
 
         document.getElementById('menu-wrapper').style.display = 'none';
 
